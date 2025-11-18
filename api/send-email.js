@@ -2,38 +2,33 @@ import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Método não permitido" });
-  }
-
-  const { nome, relato } = req.body;
-
-  if (!nome || !relato) {
-    return res.status(400).json({ message: "Dados incompletos" });
+    return res.status(405).json({ error: "Método não permitido" });
   }
 
   try {
+    const { nome, email, relato } = req.body;
+
     const transporter = nodemailer.createTransport({
-      service: "gmail",
+      host: "smtp.gmail.com",
+      port: 465,
+      secure: true,
       auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS
-      }
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
     });
 
     await transporter.sendMail({
-      from: "MundoXP <escutaceppat@gmail.com>",
-      to: "escutaceppat@gmail.com",
-      subject: `Novo relato recebido`,
-      text: `
-Nome: ${nome}
-Relato: ${relato}
-      `,
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
+      subject: "Novo relato",
+      text: `Nome: ${nome}\nEmail: ${email}\nRelato:\n${relato}`,
     });
 
-    return res.status(200).json({ message: "Relato enviado com sucesso!" });
+    return res.status(200).json({ ok: true });
 
   } catch (error) {
-    console.error("Erro:", error);
-    return res.status(500).json({ message: "Erro ao enviar o e-mail" });
+    console.error("ERRO SMTP:", error);
+    return res.status(500).json({ ok: false, error: error.toString() });
   }
 }
