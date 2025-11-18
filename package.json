@@ -1,6 +1,9 @@
 {
-  "name": "mundoxp",
+  "name": "site-escuta",
   "version": "1.0.0",
+  "description": "MundoXP - front + serverless send-email",
   "type": "module",
-  "dependencies": { "nodemailer": "^7.0.10" }
+  "dependencies": {
+    "nodemailer": "^7.0.10"
+  }
 }
