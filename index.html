@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MundoXP — Curiosidades e Diversão</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo">MundoXP</h1>
+    <p class="subtitle">Curiosidades, diversão e conhecimento em um só lugar!</p>
+
+    <!-- Botão secreto do formulário -->
+    <button id="openFormBtn" class="icon-btn" title="Abrir painel secreto">
+      🎮
+    </button>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2>🎮 Jogos</h2>
+      <p>Você sabia que o primeiro videogame da história foi criado em 1958 e se chamava “Tennis for Two”? Desde então, os jogos evoluíram de simples pixels para mundos realistas e imersivos.</p>
+      <p><strong>Dica XP:</strong> Em jogos de estratégia, observe padrões — antecipar o inimigo é mais importante que reagir rápido!</p>
+    </section>
+
+    <section class="card">
+      <h2>🎬 Filmes</h2>
+      <p>O primeiro filme com som sincronizado foi “O Cantor de Jazz” (1927). O cinema transformou o modo como contamos histórias.</p>
+      <p><strong>Curiosidade:</strong> Pixar e Studio Ghibli são referências mundiais na arte de animar emoções.</p>
+    </section>
+
+    <section class="card">
+      <h2>📺 Séries</h2>
+      <p>Séries como “Stranger Things” e “Arcane” mostram o poder da cultura geek em inspirar novas gerações.</p>
+      <p><strong>Dica XP:</strong> Assistir séries em outro idioma ajuda no aprendizado linguístico e cultural!</p>
+    </section>
+
+    <section class="card">
+      <h2>🍣 Animes</h2>
+      <p>“Astro Boy” foi um dos primeiros animes exibidos mundialmente. Hoje, animes inspiram valores como amizade e persistência.</p>
+      <p><strong>Fato XP:</strong> Muitos personagens refletem mitos e valores japoneses antigos reinterpretados no presente.</p>
+    </section>
+
+    <section class="card">
+      <h2>📜 História do Brasil</h2>
+      <p>O Brasil é formado por uma rica mistura cultural — indígenas, africanos e europeus contribuíram para nossa identidade.</p>
+      <p><strong>Sabia?</strong> A primeira capital do país foi Salvador, seguida do Rio de Janeiro e depois Brasília.</p>
+    </section>
+
+    <section class="card">
+      <h2>🍛 Comidas</h2>
+      <p>Feijoada, tapioca, acarajé e brigadeiro são patrimônios da nossa cultura gastronômica!</p>
+      <p><strong>Dica XP:</strong> Experimente cozinhar receitas regionais — é uma forma divertida de aprender história!</p>
+    </section>
+
+    <section class="card">
+      <h2>🕹️ Dicas de Gameplay</h2>
+      <p><strong>1.</strong> Treine em modos fáceis antes de enfrentar partidas ranqueadas.<br>
+      <strong>2.</strong> Ajuste o brilho da tela e o áudio — detalhes melhoram o desempenho.<br>
+      <strong>3.</strong> Lembre-se: diversão > vitória!</p>
+    </section>
+  </main>
+
+  <!-- Painel secreto do formulário -->
+  <aside id="formPanel" class="form-panel hidden">
+    <form id="escutaForm">
+      <h3>Envie sua mensagem</h3>
+
+      <label>Nome (opcional)
+        <input type="text" name="nome" placeholder="Apelido" />
+      </label>
+
+      <label>E-mail (opcional)
+        <input type="email" name="email" placeholder="seu@exemplo.com" />
+      </label>
+
+      <label>Mensagem *
+        <textarea name="relato" required rows="5" placeholder="Escreva aqui..."></textarea>
+      </label>
+
+      <label class="consent">
+        <input type="checkbox" name="consent" />
+        Autorizo o uso anônimo da mensagem.
+      </label>
+
+      <div class="actions">
+        <button type="submit">Enviar</button>
+        <button type="button" id="btnClose">Fechar</button>
+      </div>
+      <p id="status"></p>
+    </form>
+  </aside>
+
+  <footer>
+    <p>© 2025 MundoXP — Diversão e Conhecimento</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

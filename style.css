@@ -1,0 +1,164 @@
+/* FONTES E BASE */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #ff5aa4, #7038ff, #007bff, #f9c846);
+  background-size: 400% 400%;
+  animation: bgMove 15s infinite alternate;
+  margin: 0;
+  color: #fff;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* CABEÇALHO */
+.header {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+.logo {
+  font-family: "Press Start 2P", cursive;
+  font-size: 2.5rem;
+  color: #ffe600;
+  text-shadow: 3px 3px 0 #ff005d, 6px 6px 0 #000;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #fff9f9;
+}
+
+/* BOTÃO DO FORMULÁRIO */
+.icon-btn {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+  transition: transform 0.3s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+}
+
+/* CONTEÚDO */
+.content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  padding: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.18);
+}
+
+.card h2 {
+  color: #ffe600;
+  margin-bottom: 10px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.9rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* FORMULÁRIO */
+.form-panel {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  background: rgba(0,0,0,0.85);
+  border: 2px solid #ffe600;
+  border-radius: 20px;
+  padding: 20px;
+  width: 320px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  transition: transform 0.4s ease, opacity 0.4s;
+}
+
+.hidden {
+  transform: translateY(30px);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-panel h3 {
+  font-family: "Press Start 2P", cursive;
+  color: #ffe600;
+  font-size: 0.8rem;
+  margin-bottom: 15px;
+}
+
+.form-panel label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+
+.form-panel input, 
+.form-panel textarea {
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 5px;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button {
+  background: #ffe600;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: #000;
+}
+
+button:hover {
+  background: #fff;
+}
+
+#status {
+  font-size: 0.8rem;
+  margin-top: 10px;
+}
+
+#status.success { color: #00ff6a; }
+#status.error { color: #ff4545; }
+
+/* RODAPÉ */
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
+}
