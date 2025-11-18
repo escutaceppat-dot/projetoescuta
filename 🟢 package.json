@@ -1,9 +1,15 @@
 {
-    "name": "mundoxp",
-    "version": "1.0.0",
-    "type": "module",
-    "dependencies": {
-      "nodemailer": "^6.9.12"
-    }
+  "name": "site-escuta",
+  "version": "1.0.0",
+  "description": "Site MundoXP com envio de email via Vercel Serverless Functions",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No test specified\" && exit 0"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.10"
   }
+}
+
   
