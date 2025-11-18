@@ -1,0 +1,6 @@
+{
+  "name": "mundoxp",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": { "nodemailer": "^7.0.10" }
+}
