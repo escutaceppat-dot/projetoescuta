@@ -5,79 +5,124 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MundoXP — Curiosidades e Diversão</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="header">
-    <h1 class="logo">MundoXP</h1>
-    <p class="subtitle">Curiosidades, diversão e conhecimento em um só lugar!</p>
+  <div class="page-shell">
+    <header class="header">
+      <div class="topline">
+        <span class="badge" id="siteBadge">TOP LISTA</span>
+        <button id="openFormBtn" class="icon-btn" title="Abrir painel">🎮</button>
+      </div>
 
-    <!-- Botão secreto do formulário -->
-    <button id="openFormBtn" class="icon-btn" title="Abrir painel secreto">
-      🎮
-    </button>
-  </header>
+      <h1 class="logo" id="siteTitle">MundoXP</h1>
+      <p class="subtitle" id="siteSubtitle">Curiosidades, diversão e conhecimento em um só lugar!</p>
 
-  <main class="content">
-    <section class="card">
-      <h2>🎮 Jogos</h2>
-      <p>Você sabia que o primeiro videogame da história foi criado em 1958 e se chamava “Tennis for Two”? Desde então, os jogos evoluíram de simples pixels para mundos realistas e imersivos.</p>
-      <p><strong>Dica XP:</strong> Em jogos de estratégia, observe padrões — antecipar o inimigo é mais importante que reagir rápido!</p>
-    </section>
+      <section class="hero-card">
+        <div>
+          <p class="hero-kicker" id="heroKicker">NOVO DE HOJE</p>
+          <h2 id="heroTitle">Top curiosidades gamer, cultura pop e descobertas legais</h2>
+          <p id="heroText">Toda vez que você entra, encontra uma seleção diferente de conteúdos leves, rápidos e divertidos.</p>
+        </div>
+        <div class="hero-tags" id="heroTags">
+          <span>games</span>
+          <span>filmes</span>
+          <span>animes</span>
+          <span>listas</span>
+        </div>
+      </section>
+    </header>
 
-    <section class="card">
-      <h2>🎬 Filmes</h2>
-      <p>O primeiro filme com som sincronizado foi “O Cantor de Jazz” (1927). O cinema transformou o modo como contamos histórias.</p>
-      <p><strong>Curiosidade:</strong> Pixar e Studio Ghibli são referências mundiais na arte de animar emoções.</p>
-    </section>
+    <main class="content" id="contentGrid">
+      <section class="card">
+        <h2>🎮 Jogos</h2>
+        <p>Você sabia que o primeiro videogame da história foi criado em 1958 e se chamava “Tennis for Two”? Desde então, os jogos evoluíram de simples pixels para mundos realistas e imersivos.</p>
+        <p><strong>Dica XP:</strong> Em jogos de estratégia, observe padrões — antecipar o inimigo é mais importante que reagir rápido.</p>
+      </section>
 
-    <section class="card">
-      <h2>📺 Séries</h2>
-      <p>Séries como “Stranger Things” e “Arcane” mostram o poder da cultura geek em inspirar novas gerações.</p>
-      <p><strong>Dica XP:</strong> Assistir séries em outro idioma ajuda no aprendizado linguístico e cultural!</p>
-    </section>
+      <section class="card">
+        <h2>🎬 Filmes</h2>
+        <p>O primeiro filme com som sincronizado foi “O Cantor de Jazz” (1927). O cinema transformou o modo como contamos histórias.</p>
+        <p><strong>Curiosidade:</strong> Pixar e Studio Ghibli são referências mundiais na arte de animar emoções.</p>
+      </section>
 
-    <section class="card">
-      <h2>🍣 Animes</h2>
-      <p>“Astro Boy” foi um dos primeiros animes exibidos mundialmente. Hoje, animes inspiram valores como amizade e persistência.</p>
-      <p><strong>Fato XP:</strong> Muitos personagens refletem mitos e valores japoneses antigos reinterpretados no presente.</p>
-    </section>
+      <section class="card">
+        <h2>📺 Séries</h2>
+        <p>Séries como “Stranger Things” e “Arcane” mostram o poder da cultura geek em inspirar novas gerações.</p>
+        <p><strong>Dica XP:</strong> Assistir séries em outro idioma ajuda no aprendizado linguístico e cultural.</p>
+      </section>
 
-    <section class="card">
-      <h2>📜 História do Brasil</h2>
-      <p>O Brasil é formado por uma rica mistura cultural — indígenas, africanos e europeus contribuíram para nossa identidade.</p>
-      <p><strong>Sabia?</strong> A primeira capital do país foi Salvador, seguida do Rio de Janeiro e depois Brasília.</p>
-    </section>
+      <section class="card">
+        <h2>🍣 Animes</h2>
+        <p>“Astro Boy” foi um dos primeiros animes exibidos mundialmente. Hoje, animes inspiram valores como amizade e persistência.</p>
+        <p><strong>Fato XP:</strong> Muitos personagens refletem mitos e valores japoneses reinterpretados no presente.</p>
+      </section>
 
-    <section class="card">
-      <h2>🍛 Comidas</h2>
-      <p>Feijoada, tapioca, acarajé e brigadeiro são patrimônios da nossa cultura gastronômica!</p>
-      <p><strong>Dica XP:</strong> Experimente cozinhar receitas regionais — é uma forma divertida de aprender história!</p>
-    </section>
+      <section class="card">
+        <h2>📜 História do Brasil</h2>
+        <p>O Brasil é formado por uma rica mistura cultural — indígenas, africanos e europeus contribuíram para nossa identidade.</p>
+        <p><strong>Sabia?</strong> A primeira capital do país foi Salvador, seguida do Rio de Janeiro e depois Brasília.</p>
+      </section>
 
-    <section class="card">
-      <h2>🕹️ Dicas de Gameplay</h2>
-      <p><strong>1.</strong> Treine em modos fáceis antes de enfrentar partidas ranqueadas.<br>
-      <strong>2.</strong> Ajuste o brilho da tela e o áudio — detalhes melhoram o desempenho.<br>
-      <strong>3.</strong> Lembre-se: diversão &gt; vitória!</p>
-    </section>
-  </main>
+      <section class="card">
+        <h2>🍛 Comidas</h2>
+        <p>Feijoada, tapioca, acarajé e brigadeiro são patrimônios da nossa cultura gastronômica.</p>
+        <p><strong>Dica XP:</strong> Experimentar receitas regionais também é uma forma divertida de aprender história.</p>
+      </section>
 
-  <!-- Painel secreto do formulário -->
-  <aside id="formPanel" class="form-panel hidden">
-    <form id="escutaForm">
-      <h3>Envie sua mensagem</h3>
+      <section class="card">
+        <h2>🕹️ Dicas de Gameplay</h2>
+        <p><strong>1.</strong> Treine em modos fáceis antes de enfrentar partidas ranqueadas.<br>
+        <strong>2.</strong> Ajuste brilho e áudio — detalhes melhoram o desempenho.<br>
+        <strong>3.</strong> Lembre-se: diversão &gt; vitória.</p>
+      </section>
+
+      <section class="card">
+        <h2>✨ Extras</h2>
+        <p>Listas rápidas, fatos curiosos e conteúdo leve são ótimos para descansar a mente e aprender algo novo em poucos minutos.</p>
+        <p><strong>Desafio:</strong> tente contar uma curiosidade diferente para alguém hoje.</p>
+      </section>
+    </main>
+  </div>
+
+  <aside id="formPanel" class="form-panel hidden" aria-hidden="true">
+    <form id="escutaForm" novalidate>
+      <div class="panel-head">
+        <h3>Envie sua mensagem</h3>
+        <button type="button" id="btnClose" class="mini-close" aria-label="Fechar painel">×</button>
+      </div>
+
+      <p class="panel-note">Preencha somente o que achar seguro informar.</p>
+
+      <label>Escola *
+        <select name="escola" required>
+          <option value="">Selecione a escola</option>
+          <option value="CEPPAT">CEPPAT</option>
+          <option value="Colégio Estadual 2">Colégio Estadual 2</option>
+          <option value="Colégio Estadual 3">Colégio Estadual 3</option>
+          <option value="Outra">Outra</option>
+        </select>
+      </label>
 
       <label>Nome (opcional)
-        <input type="text" name="nome" placeholder="Apelido" />
+        <input type="text" name="nome" placeholder="Apelido ou primeiro nome" />
       </label>
 
       <label>E-mail (opcional)
         <input type="email" name="email" placeholder="seu@exemplo.com" />
       </label>
 
+      <label>Urgência
+        <select name="urgencia">
+          <option value="sem-classificacao">Prefiro não classificar</option>
+          <option value="baixa">Baixa</option>
+          <option value="media">Média</option>
+          <option value="alta">Alta</option>
+        </select>
+      </label>
+
       <label>Mensagem *
-        <textarea name="relato" required rows="5" placeholder="Escreva aqui..."></textarea>
+        <textarea name="relato" required rows="5" placeholder="Escreva aqui o que deseja relatar..."></textarea>
       </label>
 
       <label class="consent">
@@ -87,14 +132,15 @@
 
       <div class="actions">
         <button type="submit">Enviar</button>
-        <button type="button" id="btnClose">Fechar</button>
+        <button type="button" id="btnHide">Ocultar</button>
       </div>
-      <p id="status"></p>
+      <p id="status" aria-live="polite"></p>
+      <p class="escape-tip">Pressione Esc para fechar rapidamente.</p>
     </form>
   </aside>
 
   <footer>
-    <p>© 2025 MundoXP — Diversão e Conhecimento</p>
+    <p id="footerText">© 2026 MundoXP — Diversão e Conhecimento</p>
   </footer>
 
   <script src="script.js"></script>
