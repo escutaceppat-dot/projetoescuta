@@ -13,76 +13,45 @@ const heroTitle = document.getElementById('heroTitle');
 const heroText = document.getElementById('heroText');
 const heroTags = document.getElementById('heroTags');
 const footerText = document.getElementById('footerText');
+const contentGrid=document.getElementById('contentGrid');
 
 autoTheme();
 setupPanel();
 setupForm();
 
+
+
 function autoTheme() {
-  const themes = [
-    {
-      bodyClass: 'theme-neon',
-      title: 'MundoXP',
-      subtitle: 'Curiosidades, diversão e conhecimento em um só lugar!',
-      badge: 'TOP LISTA',
-      kicker: 'NOVO DE HOJE',
-      heroTitle: 'Top curiosidades gamer, cultura pop e descobertas legais',
-      heroText: 'Toda vez que você entra, encontra uma seleção diferente de conteúdos leves, rápidos e divertidos.',
-      tags: ['games', 'filmes', 'animes', 'listas'],
-      footer: '© 2026 MundoXP — Diversão e Conhecimento'
-    },
-    {
-      bodyClass: 'theme-arcade',
-      title: 'PlayGrid',
-      subtitle: 'Missões rápidas, rankings e curiosidades para explorar.',
-      badge: 'RANKING',
-      kicker: 'FASE ESPECIAL',
-      heroTitle: 'Guias rápidos, top personagens e fatos do universo gamer',
-      heroText: 'Um visual novo aparece automaticamente para deixar a navegação sempre diferente.',
-      tags: ['rankings', 'bosses', 'retro', 'arcade'],
-      footer: '© 2026 PlayGrid — Portal de Conteúdo Pop'
-    },
-    {
-      bodyClass: 'theme-soft',
-      title: 'PixelBox',
-      subtitle: 'Um cantinho leve para descobrir fatos curiosos e tendências pop.',
-      badge: 'EM ALTA',
-      kicker: 'SELEÇÃO DO DIA',
-      heroTitle: 'Curiosidades de séries, animes, cinema e internet',
-      heroText: 'Cards suaves, leitura rápida e um visual mais limpo a cada nova visita.',
-      tags: ['séries', 'cinema', 'internet', 'fun facts'],
-      footer: '© 2026 PixelBox — Conteúdo Rápido e Criativo'
-    },
-    {
-      bodyClass: 'theme-dark',
-      title: 'QuestZone',
-      subtitle: 'Desafios, cultura nerd e descobertas em um portal dinâmico.',
-      badge: 'QUEST DO DIA',
-      kicker: 'MODO EXPLORAR',
-      heroTitle: 'Listas rápidas e curiosidades para quem gosta de cultura geek',
-      heroText: 'Tema escuro, atmosfera tecnológica e uma aparência diferente em cada carregamento.',
-      tags: ['geek', 'explorar', 'top 10', 'desafios'],
-      footer: '© 2026 QuestZone — Explorando Cultura Pop'
-    }
-  ];
-
-  const selected = themes[Math.floor(Math.random() * themes.length)];
-  document.body.classList.add(selected.bodyClass);
-  document.title = `${selected.title} — Curiosidades e Diversão`;
-  siteTitle.textContent = selected.title;
-  siteSubtitle.textContent = selected.subtitle;
-  siteBadge.textContent = selected.badge;
-  heroKicker.textContent = selected.kicker;
-  heroTitle.textContent = selected.heroTitle;
-  heroText.textContent = selected.heroText;
-  footerText.textContent = selected.footer;
-
-  heroTags.innerHTML = '';
-  selected.tags.forEach((tag) => {
-    const span = document.createElement('span');
-    span.textContent = tag;
-    heroTags.appendChild(span);
-  });
+const themes=[
+{bodyClass:'theme-games',title:'Game Arena',subtitle:'Portal Gamer',badge:'GAMES',kicker:'TRENDING',heroTitle:'O universo gamer em destaque',heroText:'Reviews, esports e lançamentos.',
+tags:['FPS','RPG','Esports','PC'],
+html:`<section class="card heroimg"><img src="https://images.unsplash.com/photo-1542751371-adc38448a05e"><h2>GTA VI domina expectativas</h2></section>
+<section class="card"><img src="https://images.unsplash.com/photo-1511512578047-dfb367046420"><h2>Guia Valorant</h2><p>Dicas avançadas de posicionamento.</p></section>
+<section class="card"><img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8"><h2>Setup Gamer</h2><p>Equipamentos recomendados.</p></section>`},
+{bodyClass:'theme-beauty',title:'Beauty Store',subtitle:'Loja Premium',badge:'OFERTAS',kicker:'ATÉ 70% OFF',heroTitle:'Cosméticos e Skincare',heroText:'Visual de e-commerce profissional.',
+tags:['Make','Perfumes','Skincare','Promoções'],
+html:`<section class="card product"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9"><h2>Batom Velvet</h2><p>⭐⭐⭐⭐⭐</p><p><del>R$59,90</del> <strong>R$29,90</strong></p><button>Comprar Agora</button></section>
+<section class="card product"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be"><h2>Sérum Glow</h2><p><del>R$149,90</del> <strong>R$89,90</strong></p><button>Comprar Agora</button></section>
+<section class="card product"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348"><h2>Perfume Blossom</h2><p><del>R$299,90</del> <strong>R$199,90</strong></p><button>Comprar Agora</button></section>`},
+{bodyClass:'theme-food',title:'Receitas da Casa',subtitle:'Blog de Receitas',badge:'RECEITAS',kicker:'CHEF',heroTitle:'Receitas completas',heroText:'Ingredientes e modo de preparo.',
+tags:['Massas','Bolos','Doces'],
+html:`<section class="card"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836"><h2>Lasanha Especial</h2><p>Ingredientes completos e preparo.</p></section>
+<section class="card"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587"><h2>Bolo de Cenoura</h2><p>Receita detalhada.</p></section>
+<section class="card"><img src="https://images.unsplash.com/photo-1551024601-bec78aea704b"><h2>Brigadeiro Gourmet</h2><p>Passo a passo.</p></section>`},
+{bodyClass:'theme-news',title:'Portal Notícias',subtitle:'Jornal Digital',badge:'URGENTE',kicker:'MUNDO',heroTitle:'Últimas notícias',heroText:'Portal moderno.',
+tags:['Mundo','Tech','Economia'],
+html:`<section class="card"><img src="https://images.unsplash.com/photo-1495020689067-958852a7765e"><h2>Destaque Mundial</h2></section>
+<section class="card"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d"><h2>Tecnologia</h2></section>
+<section class="card"><img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a"><h2>Economia</h2></section>`}
+];
+const selected=themes[Math.floor(Math.random()*themes.length)];
+document.body.className=selected.bodyClass;
+document.title=selected.title;
+siteTitle.textContent=selected.title;siteSubtitle.textContent=selected.subtitle;siteBadge.textContent=selected.badge;
+heroKicker.textContent=selected.kicker;heroTitle.textContent=selected.heroTitle;heroText.textContent=selected.heroText;
+heroTags.innerHTML=selected.tags.map(t=>`<span>${t}</span>`).join('');
+contentGrid.innerHTML=selected.html;
+footerText.textContent=selected.title;
 }
 
 function setupPanel() {
