@@ -1,0 +1,247 @@
+/* ============================================================
+   MundoXP — 4 Layouts Profissionais
+   Estrutura comum + 4 temas: Games, Beauty, Food, News
+   ============================================================ */
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0}
+img{max-width:100%;display:block}
+button{font:inherit;cursor:pointer;border:none;background:none;color:inherit}
+
+body{
+  min-height:100vh;
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.55;
+  color:#1a1a1a;
+  background:#fafafa;
+}
+
+.page-shell{max-width:1280px;margin:0 auto;padding:0 24px}
+
+/* Header base */
+.header{padding:32px 0 24px}
+.topline{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.badge{
+  display:inline-block;padding:6px 14px;font-size:11px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;border-radius:4px;
+}
+.icon-btn{
+  width:44px;height:44px;border-radius:50%;display:grid;place-items:center;
+  font-size:20px;transition:transform .2s,background .2s;
+}
+.icon-btn:hover{transform:scale(1.08)}
+
+.logo{font-size:clamp(36px,5vw,56px);margin:0;line-height:1;font-weight:800;letter-spacing:-.02em}
+.subtitle{margin:8px 0 0;opacity:.7;font-size:15px}
+
+.hero-card{
+  margin-top:32px;padding:36px;border-radius:16px;
+  display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;
+}
+.hero-kicker{margin:0 0 8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;opacity:.7}
+.hero-card h2{margin:0;font-size:clamp(24px,3vw,36px);line-height:1.15;font-weight:700;letter-spacing:-.01em}
+.hero-card p{margin:12px 0 0;opacity:.75;max-width:560px}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.hero-tags span{padding:6px 12px;font-size:12px;font-weight:600;border-radius:999px;border:1px solid currentColor;opacity:.8}
+
+/* Content grid */
+.content{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:24px;padding:32px 0 48px;
+}
+.card{
+  border-radius:14px;overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.card:hover{transform:translateY(-4px)}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.card h2{margin:0;padding:18px 20px 8px;font-size:18px;font-weight:700;letter-spacing:-.01em}
+.card p{margin:0;padding:0 20px 16px;font-size:14px;opacity:.8}
+.card button{
+  margin:auto 20px 20px;padding:12px 20px;border-radius:8px;
+  font-weight:600;font-size:14px;transition:transform .15s,opacity .2s;
+}
+.card button:hover{transform:translateY(-1px);opacity:.92}
+
+footer{padding:32px 0;text-align:center;font-size:13px;opacity:.6;border-top:1px solid rgba(0,0,0,.08)}
+
+/* Form panel (compartilhado) */
+.form-panel{
+  position:fixed;top:0;right:0;height:100vh;width:min(420px,100%);
+  background:#fff;color:#1a1a1a;box-shadow:-20px 0 60px rgba(0,0,0,.25);
+  padding:28px;overflow-y:auto;z-index:1000;
+  transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+.form-panel.hidden{transform:translateX(100%);pointer-events:none}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.panel-head h3{margin:0;font-size:20px;font-weight:700}
+.mini-close{width:34px;height:34px;border-radius:50%;background:#f1f1f1;font-size:20px;display:grid;place-items:center}
+.mini-close:hover{background:#e5e5e5}
+.panel-note{margin:0 0 18px;font-size:13px;color:#666}
+.form-panel label{display:block;margin-bottom:14px;font-size:13px;font-weight:600;color:#333}
+.form-panel input,.form-panel select,.form-panel textarea{
+  width:100%;margin-top:6px;padding:11px 13px;border:1px solid #e0e0e0;
+  border-radius:8px;font:inherit;background:#fafafa;transition:border-color .2s,background .2s;
+}
+.form-panel input:focus,.form-panel select:focus,.form-panel textarea:focus{
+  outline:none;border-color:#1a1a1a;background:#fff;
+}
+.form-panel textarea{resize:vertical;min-height:110px}
+.consent{display:flex !important;align-items:center;gap:8px;font-weight:500 !important}
+.consent input{width:auto !important;margin:0 !important}
+.actions{display:flex;gap:10px;margin-top:8px}
+.actions button{flex:1;padding:12px;border-radius:8px;font-weight:600;font-size:14px}
+.actions button[type=submit]{background:#1a1a1a;color:#fff}
+.actions button[type=submit]:hover{background:#000}
+.actions button[type=button]{background:#f1f1f1;color:#1a1a1a}
+.actions button[type=button]:hover{background:#e5e5e5}
+#status{margin:12px 0 4px;font-size:13px;min-height:18px}
+#status.success{color:#0a7d3a}
+#status.error{color:#c0392b}
+.escape-tip{font-size:11px;color:#999;text-align:center;margin:8px 0 0}
+
+/* ============================================================
+   TEMA 1 — GAMES (Dark Esports / Neon)
+   ============================================================ */
+body.theme-games{
+  background:
+    radial-gradient(1200px 600px at 10% 0%,rgba(139,92,246,.18),transparent 60%),
+    radial-gradient(900px 500px at 90% 20%,rgba(34,211,238,.15),transparent 60%),
+    #0a0a14;
+  color:#e6e6ef;
+  font-family:'Inter',sans-serif;
+}
+.theme-games .badge{background:linear-gradient(90deg,#8b5cf6,#22d3ee);color:#fff}
+.theme-games .icon-btn{background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.4);color:#a78bfa}
+.theme-games .icon-btn:hover{background:rgba(139,92,246,.3)}
+.theme-games .logo{
+  background:linear-gradient(90deg,#fff,#a78bfa 50%,#22d3ee);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-weight:900;letter-spacing:-.03em;
+}
+.theme-games .subtitle{color:#9ca3af}
+.theme-games .hero-card{
+  background:linear-gradient(135deg,rgba(139,92,246,.12),rgba(34,211,238,.08));
+  border:1px solid rgba(139,92,246,.25);
+  backdrop-filter:blur(10px);
+}
+.theme-games .hero-card h2{color:#fff;font-weight:800}
+.theme-games .hero-card p{color:#b8bcc8}
+.theme-games .hero-tags span{background:rgba(139,92,246,.15);border-color:rgba(139,92,246,.4);color:#c4b5fd;text-transform:uppercase;font-size:11px;letter-spacing:.1em}
+.theme-games .card{
+  background:linear-gradient(180deg,#13131f,#0e0e18);
+  border:1px solid rgba(139,92,246,.18);
+  box-shadow:0 4px 20px rgba(0,0,0,.4);
+}
+.theme-games .card:hover{border-color:rgba(34,211,238,.5);box-shadow:0 8px 30px rgba(139,92,246,.25)}
+.theme-games .card h2{color:#fff}
+.theme-games .card p{color:#9ca3af}
+.theme-games .card{position:relative}
+.theme-games .game-tag{position:absolute;top:14px;left:14px;background:linear-gradient(90deg,#8b5cf6,#22d3ee);color:#fff;font-size:10px;font-weight:800;letter-spacing:.15em;padding:6px 12px;border-radius:4px;text-transform:uppercase;z-index:2;box-shadow:0 4px 16px rgba(139,92,246,.5)}
+.theme-games footer{border-top-color:rgba(139,92,246,.15);color:#6b7280}
+
+/* ============================================================
+   TEMA 2 — BEAUTY (E-commerce Premium Limpo)
+   ============================================================ */
+body.theme-beauty{
+  background:#fdfaf7;
+  color:#2d2520;
+  font-family:'Inter',sans-serif;
+}
+.theme-beauty .badge{background:#2d2520;color:#fdfaf7}
+.theme-beauty .icon-btn{background:#fff;border:1px solid #e8ddd2;color:#2d2520;box-shadow:0 2px 8px rgba(0,0,0,.04)}
+.theme-beauty .logo{font-family:'Cormorant Garamond','Playfair Display',Georgia,serif;font-weight:500;font-style:italic;letter-spacing:-.01em;color:#2d2520}
+.theme-beauty .subtitle{color:#8a7a6c;letter-spacing:.02em}
+.theme-beauty .hero-card{
+  background:linear-gradient(135deg,#f5ebe0,#fdfaf7);
+  border:1px solid #ede0d2;
+}
+.theme-beauty .hero-card h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;color:#2d2520}
+.theme-beauty .hero-kicker{color:#b8956a;font-weight:600}
+.theme-beauty .hero-tags span{background:#fff;border-color:#e8ddd2;color:#6b5d50}
+.theme-beauty .card{
+  background:#fff;border:1px solid #f0e6d8;
+  box-shadow:0 1px 3px rgba(45,37,32,.04);
+}
+.theme-beauty .card:hover{box-shadow:0 12px 32px rgba(45,37,32,.1);border-color:#e8ddd2}
+.theme-beauty .card.product img{aspect-ratio:1/1;background:#f5ebe0}
+.theme-beauty .card h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:22px;color:#2d2520}
+.theme-beauty .card p{color:#6b5d50}
+.theme-beauty .card p strong{color:#2d2520;font-size:18px;font-weight:700}
+.theme-beauty .card p del{color:#b8a89a;font-size:13px}
+.theme-beauty .card p.review{color:#8a7a6c;font-size:13px;opacity:1;letter-spacing:.02em;margin-top:-8px;padding-bottom:8px}
+.theme-beauty .card button{background:#2d2520;color:#fdfaf7;text-transform:uppercase;font-size:12px;letter-spacing:.12em}
+.theme-beauty .card button:hover{background:#1a1410}
+.theme-beauty footer{border-top-color:#f0e6d8;color:#8a7a6c}
+
+/* ============================================================
+   TEMA 3 — FOOD (Editorial Magazine Quente)
+   ============================================================ */
+body.theme-food{
+  background:#fff8ef;
+  color:#3d2817;
+  font-family:'Lora','Georgia',serif;
+}
+.theme-food .badge{background:#c0392b;color:#fff;border-radius:0}
+.theme-food .icon-btn{background:#fff;border:1px solid #e8d5b7;color:#3d2817}
+.theme-food .logo{font-family:'Playfair Display','Lora',Georgia,serif;font-weight:900;font-style:italic;color:#3d2817}
+.theme-food .subtitle{color:#8a6f4f;font-style:italic}
+.theme-food .hero-card{
+  background:#fff;border:1px solid #e8d5b7;border-left:4px solid #c0392b;border-radius:0;
+}
+.theme-food .hero-card h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:#3d2817}
+.theme-food .hero-kicker{color:#c0392b;font-weight:700;font-family:'Inter',sans-serif}
+.theme-food .hero-tags span{background:#fff;border:1px solid #c0392b;color:#c0392b;border-radius:0;text-transform:uppercase;font-size:11px;font-family:'Inter',sans-serif}
+.theme-food .card{
+  background:#fff;border:1px solid #e8d5b7;border-radius:0;
+  box-shadow:0 2px 12px rgba(61,40,23,.06);
+}
+.theme-food .card:hover{box-shadow:0 12px 28px rgba(61,40,23,.15)}
+.theme-food .card h2{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:22px;color:#3d2817}
+.theme-food .card p{color:#5a4530}
+.theme-food .card .recipe-meta{
+  display:flex;gap:8px;padding:12px 20px 0;
+}
+.theme-food .card .recipe-meta span{
+  font-family:'Inter',sans-serif;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+  padding:4px 8px;background:#f5ebe0;color:#8a6f4f;border:1px solid #e8d5b7;
+}
+.theme-food footer{border-top-color:#e8d5b7;color:#8a6f4f;font-style:italic}
+
+/* ============================================================
+   TEMA 4 — NEWS (Portal Jornalístico Sério)
+   ============================================================ */
+body.theme-news{
+  background:#fff;
+  color:#1a1a1a;
+  font-family:'Source Sans 3','Inter',system-ui,sans-serif;
+}
+.theme-news .header{border-bottom:3px solid #1a1a1a;padding-bottom:20px}
+.theme-news .badge{background:#d62828;color:#fff;border-radius:2px;padding:5px 12px}
+.theme-news .icon-btn{background:#f4f4f4;border:1px solid #d4d4d4;color:#1a1a1a;border-radius:4px}
+.theme-news .logo{font-family:'Playfair Display','Times New Roman',serif;font-weight:900;color:#1a1a1a;letter-spacing:-.03em}
+.theme-news .subtitle{color:#555;font-size:14px;border-bottom:1px solid #e5e5e5;padding-bottom:12px}
+.theme-news .hero-card{
+  background:#f8f8f8;border:1px solid #e5e5e5;border-top:3px solid #d62828;border-radius:0;
+}
+.theme-news .hero-card h2{font-family:'Playfair Display',serif;font-weight:900;color:#1a1a1a}
+.theme-news .hero-kicker{color:#d62828;font-weight:700}
+.theme-news .hero-tags span{background:#1a1a1a;color:#fff;border:none;border-radius:0;text-transform:uppercase;font-size:11px;letter-spacing:.08em}
+.theme-news .card{
+  background:#fff;border:1px solid #e5e5e5;border-radius:0;
+}
+.theme-news .card:hover{border-color:#1a1a1a;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+.theme-news .card h2{font-family:'Playfair Display',serif;font-weight:800;font-size:20px;color:#1a1a1a;line-height:1.25}
+.theme-news .card p{color:#444;font-size:14px}
+.theme-news footer{border-top:3px solid #1a1a1a;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+
+/* ============================================================
+   Responsivo
+   ============================================================ */
+@media (max-width:720px){
+  .hero-card{grid-template-columns:1fr;padding:24px}
+  .hero-tags{justify-content:flex-start}
+  .content{grid-template-columns:1fr;gap:16px}
+  .form-panel{width:100%}
+}
